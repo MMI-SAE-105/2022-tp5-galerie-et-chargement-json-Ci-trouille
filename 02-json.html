@@ -8,6 +8,32 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
-    
+    <H1>Json</H1>
+    <ul x-data="{ donnees: [ 
+        {
+            nom: 'Jean', 
+            projet: 'Alpine.js', 
+            url: 'https://alpine.dev/'
+        },
+        {
+            nom:'Maxime',
+            projet:'Tailwind CSS',
+            url:'https://tailwindcss.com/'
+        },
+        {
+            nom: 'Adam',
+            projet:'Laravel',
+            url:'https://laravel.com/'
+        } 
+    ],
+        
+        }">
+        <template x-for="donnee in donnees">
+            <li>
+                <span x-text="donnee.nom">nom</span> : 
+                <a x-bind:href="donnee.url" x-text="donnee.projet">projet</a>
+            </li>
+        </template>
+    </ul>
 </body>
 </html>
